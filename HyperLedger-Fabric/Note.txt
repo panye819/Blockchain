@@ -1,0 +1,9 @@
+
+
+特点：
+    RPC interface
+    Data validation
+    Error handing
+    Business logic
+    Access control
+consensus 一致 provenance 起源 finality 定局
