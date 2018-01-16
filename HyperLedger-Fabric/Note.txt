@@ -7,3 +7,61 @@
     Business logic
     Access control
 consensus 一致 provenance 起源 finality 定局
+
+Q：What does the blockchain solution administrator typically do?
+A: Provisions the target environment on the fabric
+
+components in a blockchain
+  1、ledger
+    A ledger is a channel's chain and current state data which is maintained
+    by each peer on the channel.
+    A ledger often consists of two data structures:
+      a) A linked list of blocks:
+          Each blcok describles a set of transactions
+          Immutable - blocks cannot be tampered
+      b) An ordinary database(e.g. key/value store)
+          Stores the combined outputs of all transactions
+          Not usually immutable
+  2、Smart Contract:
+    software runnung on a ledger to oncode assets and the transaction instructions
+    (Business logic) for modifying the assets.
+    A smart contract defines the rules that govern the entire blockchain network
+    like the rules that govern a card or board gam
+  3、Peer Network:
+    A broader term overarching the entire transaction flow, which servers to
+    generate an agreement on the order and to confirm the correctness of the
+    set of transaction constituting a block.
+  4、Membership:
+    Membership Services authenticates,authorizes,and manages identities on a
+    permissioned blockchain network.
+  5、Events:
+    Creates notifacations of significant operations on the blockchain(eg a new
+    block),as well as notifications related to smart contracts.
+    Does not include event distribution.
+  6、System Management:
+    Provides the ability to create ,change and monitor Blockchain components.
+  7、Wallet:
+    Securely manages a user's security credentials
+  8、System Integration:
+    Responsible for Integration Blockchain bi-directionally with external systems.
+    Not part of Blockchain, but used with it .
+Consensus algorithms:
+  Proof of work:
+     Require validators to solve difficult cryptographic puzzles
+     PROs: Works in  untrusted networks
+     CONs: Relies on energy use;
+           Slow to confir transactions
+     Example usage: Bitcoin Ethereum
+
+     Proof of stake:
+        Require validators to hold currency in escrow
+        PROs: Works in  untrusted networks
+        CONs: Requires intrinsic(crypto) currency;
+              "Nothing at stake" problem
+        Example usage: Nxt
+
+     Proof of Elapsed Time :
+        Wait time in a trusted execution environment randomizes block generation
+        PROs: Efficient
+        CONs: Currently tailored towards one vendor;
+        Example usage: Sawtooth-Lake
