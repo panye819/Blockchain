@@ -1,0 +1,34 @@
+models in Hyperledger Fabric
+  1、Assets
+    tangible(real estate and hardware)
+    intangible(contracts and intellectual property)
+    Represented as a collection of key-value pairs, with state changes recorded
+    as transactions on a Channel ledger.
+    Assets can be represented in binary and/or JSON form.
+
+  2、Chaincode:
+    Chaincode is software defining an asset or assets and the transaction
+    instructions for modifying the asset(s).
+    In other words , it is the business logic.
+
+  3、Ledger Features:
+    A broader term overarching the entire transaction flow, which servers to
+    generate an agreement on the order and to confirm the correctness of the
+    set of transaction constituting a block.
+
+  4、Privacy through Channels:
+     Channels enable multi-lateral transactions with the high degrees of privacy
+     and confidentiality required by competing businesses and regulated industries
+     that exchange assets on a common network.
+
+  5、Security & Membership Services :
+     Permissioned membership provides a trusted blockchain network, where
+     participants know that all transactions can be detected and traced by
+     authorized regulators and auditors.
+
+  6、System Management:
+    Provides the ability to create ,change and monitor Blockchain components.
+
+  7、Consensus:
+    a unique approach to consensus enables the flexibility and scalability
+    needed for the enterprise.
