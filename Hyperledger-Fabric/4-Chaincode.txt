@@ -1,32 +1,7 @@
-MSP:
-  Membership Service Provider
+Chaincode:
+  Chaincode is a program, written in Go, and eventually in other programming
+  languages such as Java, that implements a prescribed interface. Chaincode runs
+  in a secured Docker container isolated from the endorsing peer process.
 
-Channel:
-  Allowing a group of participants to create a separate ledger of transactions.
-  If two participants from a channel ,then those participants - and no others-
-  have copies of the ledger for that channel.
-
-Shared Ledger:
-  Hyperledger Fabric has a ledger subsustem comprising two components:
-    World state:
-      Describe the state of the ledger at a given point in time.
-      It is the database of the ledger.
-    transaction log:
-      Records all transactions which have resulted in the current value of the
-      world state.
-      It is the update history for the world state.
-
-Smart Contracts
-    Hyperledger Fabric Smart Contracts are written in chaincode and are invoked
-    by an application external to the blockchain when that application nees to
-    interact with the ledger.
-    In most cases chaincode only interacts with the database component of the
-    ledger,the world state(querying it ,e.g),and not the transaction log.
-
-Privacy:
-    Hyperledger Fabric supports networks where privacy(using channel) is a key
-    operational requirement as well as networks that are comparetively open.
-
-Consensus:
-  PBFT(Practical Byzantine Fault Tolerance), SOLO, Kafka
-  SBFT(Simplified Byzantine Fault Tolerance)
+  Chaincode initializes and manages ledger state through transactions submitted
+  by applications.
