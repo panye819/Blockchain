@@ -1,0 +1,10 @@
+1、System architecture:
+    The blockchain is a distributed system consisting of many nodes that communicate with each other. The blockchain
+    runs programs called chaincode, holds state and ledger data, and executes transactions.
+    1) Transactions:
+         Transactions may be of two types:
+         Deploy transactions create new chaincode and take a program as parameter. When a deploy transaction executes
+         successfully, the chaincode has been installed “on” the blockchain.
+         Invoke transactions perform an operation in the context of previously deployed chaincode. An invoke transaction
+         refers to a chaincode and to one of its provided functions. When successful, the chaincode executes the
+         specified function - which may involve modifying the corresponding state, and returning an output.
