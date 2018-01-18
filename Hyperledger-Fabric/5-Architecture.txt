@@ -1,10 +1,36 @@
 1、System architecture:
-    The blockchain is a distributed system consisting of many nodes that communicate with each other. The blockchain
-    runs programs called chaincode, holds state and ledger data, and executes transactions.
+    The blockchain is a distributed system consisting of many nodes that
+    communicate with each other. The blockchain runs programs called chaincode,
+    holds state and ledger data, and executes transactions.
     1) Transactions:
-         Transactions may be of two types:
-         Deploy transactions create new chaincode and take a program as parameter. When a deploy transaction executes
-         successfully, the chaincode has been installed “on” the blockchain.
-         Invoke transactions perform an operation in the context of previously deployed chaincode. An invoke transaction
-         refers to a chaincode and to one of its provided functions. When successful, the chaincode executes the
-         specified function - which may involve modifying the corresponding state, and returning an output.
+      Transactions may be of two types:
+      a、 Deploy transactions create new chaincode and take a program as
+         parameter. When a deploy transaction executes successfully, the
+         chaincode has been installed “on” the blockchain.
+      b、 Invoke transactions perform an operation in the context of previously
+         deployed chaincode. An invoke transaction refers to a chaincode and to
+         one of its provided functions.
+         When successful, the chaincode executes the specified function - which
+         may involve modifying the corresponding state, and returning an output.
+    2) Datastructures:
+       a、 state:
+          The latest state of the blockchain (or, simply, state) is modeled as a
+          versioned key/value store (KVS), where keys are names and values are
+          arbitrary blobs.
+       b、 Ledger:
+          Ledger provides a verifiable history of all successful state changes
+          (we talk about valid transactions) and unsuccessful attempts to change
+          state (we talk about invalid transactions), occurring during the
+          operation of the system.
+    3) Nodes:
+          Nodes are the communication entities of the blockchain.
+          There are three types of nodes:
+            a、Client or submitting-client: a client that submits an actual
+            transaction-invocation to the endorsers, and broadcasts transaction-
+            proposals to the ordering service.
+            b、Peer: a node that commits transactions and maintains the state and
+            a copy of the ledger (see Sec, 1.2). Besides, peers can have a special
+            endorser role.
+            c、Ordering-service-node or orderer: a node running the communication
+            service that implements a delivery guarantee, such as atomic or total
+            order broadcast.
