@@ -1,0 +1,10 @@
+1、To limit the number of times that the same secret (or password) can be used
+for enrollment, set the registry.maxenrollments in the configuration file to the
+appropriate value. If you set the value to 1, the Fabric CA server allows
+passwords to only be used once for a particular enrollment ID. If you set the
+value to -1, the Fabric CA server places no limit on the number of times that
+a secret can be reused for enrollment. The default value is -1. Setting the
+value to 0, the Fabric CA server will disable enrollment for all identitiies
+and registeration of identities will not be allowed.
+
+2、The Fabric CA server should now be listening on port 7054.
