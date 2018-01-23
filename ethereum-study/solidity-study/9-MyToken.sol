@@ -11,7 +11,9 @@ contract MyFirstToken is ERC20 {
 
     mapping  (address=>uint) private __balanceOf;
     mapping (address=>mapping (address=>uint)) private __allowances;
-
+    function MyFirstToken() {
+        __balanceOf[msg.sender] = __totalSupply;
+    }
     function totalSupply() constant returns (uint _totalSupply) {
         _totalSupply = __totalSupply;
     }
