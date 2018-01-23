@@ -1,0 +1,50 @@
+Consensus algorithms:
+  Proof of work:
+     Require validators to solve difficult cryptographic puzzles
+     PROs: Works in  untrusted networks
+     CONs: Relies on energy use;
+           Slow to confir transactions
+     Example usage: Bitcoin Ethereum
+
+ Proof of stake:
+        Require validators to hold currency in escrow
+        PROs: Works in  untrusted networks
+        CONs: Requires intrinsic(crypto) currency;
+              "Nothing at stake" problem
+        Example usage: Nxt
+
+ Proof of Elapsed Time :
+        Wait time in a trusted execution environment randomizes block generation
+        PROs: Efficient
+        CONs: Currently tailored towards one vendor;
+        Example usage: Sawtooth-Lake
+ Solo :
+        validate apply received transactions without consensus
+        PROs: very quick;suited to development
+        CONs: No consensus;
+              Can lead to divergent chains
+        Example usage: Hyperledger Fabric V1
+  PBFT-based :
+           Practical NByzantine Fault Tolenrance implementations
+           PROs: Reasonably efficient and tolerant against malicious peers
+           CONs: validators are known and totally connected;
+           Example usage: Hyperledger Fabric V0.6
+  Kafka/Zookeeper:
+            Ordering Service distributes blocks to peers
+            PROs: Efficient and fault  tolerant
+            CONs: Does not guard against malicious activity;
+            Example usage: Hyperledger Fabric V1
+
+Network Consensus
+    Committing Peer :
+        Maintains ledger and state.Commits transactions
+        May hold smart contract(chaincode)
+    Endorsing Peer:
+        Specialized committing peer that receives a transaction proposal for
+        endorsement,responds granting or denying endorsement.
+        May hold smart contract
+    Ordering Nodes(Service):
+        Approves the inclusion of transaction blocks into the ledger and
+        communicates with committing and endorsing peer nodes.
+        Does not hold smart contract.
+        Does not hold ledger.
