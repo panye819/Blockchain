@@ -1,83 +1,23 @@
 pragma solidity ^0.4.0;
 
-interface Regulator {
-    function checkValue(uint amount)  returns (bool);
-    function loan() returns (bool);
-}
-contract Bank is Regulator {
-    uint private value;
-    address private owner;
-    modifier ownerFunc {
-        require(owner == msg.sender);
-        _;
-     }
-     function testThrow() {
-         
-     }
-    function Bank(uint amount) {
-        value = amount;
-        owner = msg.sender;
-    }
-    function deposit(uint amount) ownerFunc {
-        value += amount;
-    }
-    function withdraw(uint amount) ownerFunc {
-        if (checkValue(amount)) {
-             value -= amount;
-        }
-    }
-    function balance() returns (uint) {
-        return value;
-    }
-    function loan() returns (bool) {
-        return value > 0 ;
+import "4-LibraryDemo.sol";
+
+contract TestLibrary {
+    using IntExtended for uint;
+    
+    function testIncrement(uint _base) returns (uint) {
+        return IntExtended.increment(_base);
     }
     
-    function checkValue(uint amount) returns (bool) {
-        return amount >= amount; 
-    }
-}
-
-contract MyFirstContract is Bank(200) {
-    string private name;
-    uint private age;
-
-    function setName(string newName) {
-        name = newName;
-    }
-
-    function getName() returns (string) {
-        return name;
-    }
-
-    function setAge(uint newAge) {
-        age = newAge;
-    }
-
-    function getAge() returns (uint) {
-        return age;
-    }
-
-    function loan() returns (bool) {
-        return true;
-    }
-
-}
-
-contract TestThrows {
-    function testAssert() {
-        assert(1 == 2);
+    function testDecrement(uint _base) returns (uint) {
+        return IntExtended.decrement(_base);
     }
     
-    function testRequire() {
-        require(2 == 1);
+    function testDecrementByValue(uint _base, uint _value) returns (uint) {
+        return _base -= _value;
     }
     
-    function testRevert() {
-        revert();
-    }
-    
-    function testThrow() {
-        throw;
+    function testIncrementByValue(uint _base, uint _value) returns (uint) {
+        return _base += _value;
     }
 }
