@@ -5,7 +5,6 @@
 int main()
 {
     int i;
-    printf("i的初始值是：%d\n",i);
     int sum=0;
     double avg;
     int flag = 0;

@@ -2,8 +2,10 @@
 #define ROW 3
 #define COL 3
 /**
-    二维数组：
-        datatype name[rowSize][colSize]
+    游戏规则：
+        1、游戏一共进行10天
+        2、每天结算好感度，一旦有三个或以上的嫔妃好感度低于60，则发生暴乱
+            游戏结束。
 */
 int main()
 {
