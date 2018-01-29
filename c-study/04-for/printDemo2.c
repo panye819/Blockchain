@@ -15,7 +15,12 @@ int main()
            }
            for(j=0;j<=i*2;j++)
            {
-               printf("%c",'*');
+              if(i == 0 || i == 3|| j==0||j==2*i)
+              {
+                  printf("%c", '*');
+              }else{
+                  printf("%c", ' ');
+              };
            }
            printf("\n");
     }
@@ -25,9 +30,14 @@ int main()
            {
                printf("%c",' ');
            }
-           for(j=0;j<=4-2*i;j++)
+           for(j=0;j<=i*2;j++)
            {
-               printf("%c",'*');
+              if(i == 0 || i == 3|| j==0||j==2*i)
+              {
+                  printf("%c", '*');
+              }else{
+                  printf("%c", ' ');
+              };
            }
            printf("\n");
     }
